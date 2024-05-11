@@ -24,7 +24,7 @@ class FileManager:
             print('not valid')
             self.get_text_type()
 
-    # create files
+    # Create files
     def upload_file(self):
 
         with open(self.path, 'r') as file:
@@ -34,8 +34,17 @@ class FileManager:
             # id = db_manager.get_biggest_id(text_type) -> text_type + id + '.txt'
             # db_manager.insert_to_database(s, name)
 
+    # Retrieve files
+    def get_file_content_from_id(self, text_type, id):
 
+            s = 'placeholder'
+            # s = db_manager.get_text_content(text_type, id)
+            print(s)
 
+    def get_file_content_from_name(self, text_type, name):
+        s = 'placeholder'
+        # s = db_manager.get_text_content_from_name(name)
+        print(s)
 
 
 
