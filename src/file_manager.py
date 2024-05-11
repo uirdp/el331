@@ -34,9 +34,7 @@ class FileManager:
             # id = db_manager.get_biggest_id(text_type) -> text_type + id + '.txt'
             # db_manager.insert_to_database(s, name)
 
-    def update_file(self):
-        #s = db.get(name)
-        #s2 = db.get(name)
+
 
 
 
