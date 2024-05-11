@@ -8,9 +8,8 @@ class TextType(Enum):
 
 class FileManager:
 
-    def __init__(self, path, type):
+    def __init__(self, path):
         self.path = path
-        self.type = type
 
     def get_text_type(self):
         type = int(input('Q = 1, K = 2, R = 3'))
@@ -21,19 +20,19 @@ class FileManager:
         elif type == TextType.R:
             return 'R'
         else:
-            #不正な入力のばあいやり直す
+            # 不正な入力のばあいやり直す
             print('not valid')
             self.get_text_type()
-        
 
-
+    # create files
     def upload_file(self):
-        
 
         with open(self.path, 'r') as file:
             s = file.read()
-            name = type + '1.txt'
-            #db_manager.insert_to_database(s, name)
+            text_type = self.get_text_type()
+            name = text_type + '1.txt'
+            # id = db_manager.get_biggest_id(text_type) -> text_type + id + '.txt'
+            # db_manager.insert_to_database(s, name)
 
 
 
