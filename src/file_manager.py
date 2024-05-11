@@ -8,7 +8,7 @@ class TextType(Enum):
 
 class FileManager:
 
-    def __init__(self, path, type):
+    def __init__(self, path):
         self.path = path
         self.type = type
 
@@ -28,12 +28,16 @@ class FileManager:
 
 
     def upload_file(self):
-        
+        type = self.get_text_type()
 
         with open(self.path, 'r') as file:
             s = file.read()
-            name = type + '1.txt'
+            name = type + id + '.txt'
             #db_manager.insert_to_database(s, name)
+
+    def update_file(self):
+        #s = db.get(name)
+        #s2 = db.get(name)
 
 
 
