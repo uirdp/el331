@@ -12,7 +12,7 @@ class FileManager:
         self.path = path
 
     def get_text_type(self):
-        type = int(input('Q = 1, K = 2, R = 3'))
+        text_type = int(input('Q = 1, K = 2, R = 3'))
         if type == TextType.Q:
             return 'Q'
         elif type == TextType.K:
