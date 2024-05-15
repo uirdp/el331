@@ -1,5 +1,6 @@
 import FileManager
 
+
 def main():
     command = input("choose operation, u:upload file, s:show file content, d:delete file, ud:update file ")
 
@@ -17,7 +18,13 @@ def main():
 
     def upload_file():
         path = input('input path to the file')
-        file_manager = FileManager(path)
-        file_manager.upload_file()
+        file_manager = FileManager.FileManager()
+        file_manager.upload_file(path)
+
+    def update_file():
+        name = input("input file name")
+        file_manager = FileManager.FileManager()
+        file_manager.update_file()
+
 
 
