@@ -29,9 +29,7 @@ class FileManager:
 
         with open(self.path, 'r') as file:
             s = file.read()
-            text_type = self.get_text_type()
-            name = text_type + '1.txt'
-            # id = db_manager.get_biggest_id(text_type) -> text_type + id + '.txt'
+            name = file.name
             # db_manager.insert_to_database(s, name)
 
     # Retrieve files
@@ -46,5 +44,19 @@ class FileManager:
         # s = db_manager.get_text_content_from_name(name)
         print(s)
 
+    def update_file(self):
+        command = input('update file name : f, or content : c')
+        if command == 'f':
+            self.update_file_name()
+        elif command == 'c':
+            a = 1
+        else:
+            print('command error')
+
+    def update_file_name(self):
+        text_type = self.get_text_type()
+        id = int(input('input id of the file to rename'))
+        name = input('updated name')
+        # db_manager.update_name(id, name)
 
 
