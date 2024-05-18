@@ -26,3 +26,13 @@ class DatabaseManager:
 
         cur.execute('INSERT INTO items(original_name, content) VALUES (?,?);', (filename, content))
         conn.commit()
+
+    def show_data_from_origninal_name(self, conn, filename):
+        cur = conn.cursor()
+
+        cur.execute('SELECT * FROM items WHERE original_name=?', (filename,))
+        print(cur.fetchall())
+
+    def show_all_data(self, conn):
+        cur = conn.cursor()
+        cur.execute('SELECT * FROM items')
