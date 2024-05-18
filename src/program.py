@@ -19,6 +19,9 @@ def main():
         a = 4
     elif command == 'a':
         show_all_files_from_database(db)
+    elif command == 'dg':
+        g = '../sample.txt'
+        db.translate_to_id(g, 'original_name')
     else:
         print('bad command, try again')
 
@@ -39,6 +42,13 @@ def show_file_from_database(db):
         if option == 'o':
             name = input('input the original name of the file: ')
             db.show_data_from_origninal_name(db.conn, name)
+
+
+def delete_file_from_database(db):
+    target_name_or_id = input('input the name or id of the file: ')
+
+    option = input('search by name or id?: n or i: ')
+
 
 def show_all_files_from_database(db):
     db.show_all_data(db.conn)
