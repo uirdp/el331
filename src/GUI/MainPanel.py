@@ -1,6 +1,7 @@
 import FileManager
 import DatabaseManager
 import ContentDump
+import SearchWordPanel
 
 from typing import Dict
 
@@ -21,6 +22,9 @@ from flet import (
     TextField,
     Radio,
     RadioGroup,
+    Tabs,
+    Tab,
+    Container,
 )
 
 
@@ -42,6 +46,26 @@ def main(page: Page):
 
     file_search_target = Ref[TextField]()
 
+    search_token_button = Ref[ElevatedButton]()
+    target_token = Ref[TextField]()
+
+    t = Tabs(
+        selected_index=0,
+        animation_duration=200,
+        tabs=[
+            Tab(
+
+            ),
+            Tab(
+                text="search",
+                icon=icons.SEARCH,
+                content=Container(
+                    SearchWordPanel.WordSearch(),
+                )
+            )
+        ]
+    )
+
     def file_picker_result(e: FilePickerResultEvent):
         upload_button.current.disabled = True if e.files is None else False
         prog_bars.clear()
@@ -51,6 +75,7 @@ def main(page: Page):
                 prog = ProgressRing(value=0, bgcolor="#eeeeee", width=20, height=20)
                 prog_bars[f.name] = prog
                 files.current.controls.append(Row([prog, Text(f.name)]))
+
         page.update()
 
     def on_upload_progress(e: FilePickerUploadEvent):
@@ -73,8 +98,7 @@ def main(page: Page):
         option = search_options.value
         key = file_search_target.current.value
 
-        s = show_file_from_database(key, option)
-
+        show_file_from_database(key, option)
 
     def show_file_from_database(key, option):
         if option == 'original_name':
@@ -84,11 +108,21 @@ def main(page: Page):
 
             ContentDump.text_dump(s)
 
+    def search_token(e):
+        option = search_options.value
+        f_key = file_search_target.current.value
+        t_key = target_token.current.value
+        if option == 'original_name':
+            id = db.translate_to_id(f_key, 'original_name')
+            s = db.get_content(id)
+
+            ContentDump.search_token(s, t_key)
 
     # hide dialog in a overlay
     page.overlay.append(file_picker)
 
     page.add(
+
         ElevatedButton(
             "Select files...",
             icon=icons.FOLDER_OPEN,
@@ -104,14 +138,26 @@ def main(page: Page):
 
         TextField(ref=file_search_target, label="file name or id"),
         search_options,
+        TextField(ref=target_token, label='search token'),
 
-        ElevatedButton(
-            "Look Up a File",
-            ref=upload_button,
-            icon=icons.DOWNLOAD,
-            on_click=show_file_content,
-        ),
 
+        Row(
+            controls=[
+                ElevatedButton(
+                    "Show content",
+                    ref=upload_button,
+                    icon=icons.DOWNLOAD,
+                    on_click=show_file_content,
+                ),
+
+                ElevatedButton(
+                    "Search token",
+                    ref=search_token_button,
+                    icon=icons.SEARCH,
+                    on_click=search_token,
+                )
+            ]
+        )
 
     )
 

@@ -49,7 +49,7 @@ class DatabaseManager:
         cur.execute('INSERT INTO items(original_name, content) VALUES (?,?);', (filename, content))
         self.conn.commit()
 
-        self.show_data(cur.lastrowid)
+        self.show_all_data()
         print('data inserted ')
 
     def get_content(self, id):
