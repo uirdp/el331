@@ -73,16 +73,17 @@ def main(page: Page):
         option = search_options.value
         key = file_search_target.current.value
 
-        s = show_file_from_database(db, key, option)
+        s = show_file_from_database(key, option)
 
 
-    def show_file_from_database(db, key, option):
+    def show_file_from_database(key, option):
         if option == 'original_name':
             id = db.translate_to_id(key, 'original_name')
             print(id)
             s = db.get_content(id)
 
             ContentDump.text_dump(s)
+
 
     # hide dialog in a overlay
     page.overlay.append(file_picker)
