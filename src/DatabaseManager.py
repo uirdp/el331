@@ -52,11 +52,13 @@ class DatabaseManager:
         self.show_data(cur.lastrowid)
         print('data inserted ')
 
-    def show_data(self, id):
+    def get_content(self, id):
         cur = self.conn.cursor()
 
-        cur.execute('SELECT * FROM items WHERE id=?', (id,))
-        print(cur.fetchall())
+        cur.execute('SELECT content FROM items WHERE id=?', (id,))
+        s = cur.fetchone()[0]
+
+        return s
 
     def delete_from_database(self, id):
         cur = self.conn.cursor()

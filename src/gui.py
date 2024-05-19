@@ -18,6 +18,9 @@ from flet import (
     Row,
     Text,
     icons,
+    TextField,
+    Radio,
+    RadioGroup,
 )
 
 
@@ -29,7 +32,15 @@ def main(page: Page):
     prog_bars: Dict[str, ProgressRing] = {}
     files = Ref[Column]()
     upload_button = Ref[ElevatedButton]()
+
+    # show
     show_button = Ref[ElevatedButton]()
+    search_options = RadioGroup(content=Row([
+        Radio(value="original_name", label="Original Name"),
+        Radio(value="updated_name", label="Updated Name"),
+        Radio(value="id", label="ID"),]))
+
+    file_search_target = Ref[TextField]()
 
     def file_picker_result(e: FilePickerResultEvent):
         upload_button.current.disabled = True if e.files is None else False
@@ -58,10 +69,20 @@ def main(page: Page):
                 name, content = file_manager.get_file_content_and_name(f.path)
                 db.insert_to_database(name, content)
 
-
     def show_file_content(e):
-        dump = ContentDump.text_dump('sample text')
+        option = search_options.value
+        key = file_search_target.current.value
 
+        s = show_file_from_database(db, key, option)
+
+
+    def show_file_from_database(db, key, option):
+        if option == 'original_name':
+            id = db.translate_to_id(key, 'original_name')
+            print(id)
+            s = db.get_content(id)
+
+            ContentDump.text_dump(s)
 
     # hide dialog in a overlay
     page.overlay.append(file_picker)
@@ -79,21 +100,21 @@ def main(page: Page):
             icon=icons.UPLOAD,
             on_click=upload_files,
         ),
+
+        TextField(ref=file_search_target, label="file name or id"),
+        search_options,
+
         ElevatedButton(
-            "Show File Content",
+            "Look Up a File",
             ref=upload_button,
-            icon=icons.UPLOAD,
+            icon=icons.DOWNLOAD,
             on_click=show_file_content,
         ),
+
+
     )
 
 
 flet.app(target=main)
 
 
-def upload_file(db, path):
-    file_manager = FileManager.FileManager()
-
-    name, content = file_manager.get_file_content_and_name(path)
-
-    db.insert_to_database(name, content)
