@@ -6,7 +6,7 @@ class DatabaseManager:
         conn = []
     def open_database(self):
         dbname = '.database'
-        self.conn = sqlite3.connect(dbname)
+        self.conn = sqlite3.connect(dbname, check_same_thread=False)
         self.create_database()
 
     def create_database(self):
@@ -20,7 +20,7 @@ class DatabaseManager:
 
         self.conn.commit()
 
-    #他パラメータを受け取ってidで返す
+    # 他パラメータを受け取ってidで返す
     def translate_to_id(self, user_input, input_type):
         cur = self.conn.cursor()
 
