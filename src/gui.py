@@ -1,5 +1,6 @@
 import FileManager
 import DatabaseManager
+import ContentDump
 
 from typing import Dict
 
@@ -57,6 +58,11 @@ def main(page: Page):
                 name, content = file_manager.get_file_content_and_name(f.path)
                 db.insert_to_database(name, content)
 
+
+    def show_file_content(e):
+        dump = ContentDump.text_dump('sample text')
+
+
     # hide dialog in a overlay
     page.overlay.append(file_picker)
 
@@ -77,7 +83,7 @@ def main(page: Page):
             "Show File Content",
             ref=upload_button,
             icon=icons.UPLOAD,
-            disabled=True,
+            on_click=show_file_content,
         ),
     )
 
