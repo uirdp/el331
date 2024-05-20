@@ -1,7 +1,6 @@
 import FileManager
 import DatabaseManager
 import ContentDump
-import SearchWordPanel
 
 from typing import Dict
 
@@ -27,7 +26,7 @@ from flet import (
     Container,
 )
 
-
+search_number = 0
 def main(page: Page):
 
     db = DatabaseManager.DatabaseManager()
@@ -36,6 +35,9 @@ def main(page: Page):
     prog_bars: Dict[str, ProgressRing] = {}
     files = Ref[Column]()
     upload_button = Ref[ElevatedButton]()
+
+
+
 
     # show
     show_button = Ref[ElevatedButton]()
@@ -48,23 +50,6 @@ def main(page: Page):
 
     search_token_button = Ref[ElevatedButton]()
     target_token = Ref[TextField]()
-
-    t = Tabs(
-        selected_index=0,
-        animation_duration=200,
-        tabs=[
-            Tab(
-
-            ),
-            Tab(
-                text="search",
-                icon=icons.SEARCH,
-                content=Container(
-                    SearchWordPanel.WordSearch(),
-                )
-            )
-        ]
-    )
 
     def file_picker_result(e: FilePickerResultEvent):
         upload_button.current.disabled = True if e.files is None else False
@@ -109,6 +94,9 @@ def main(page: Page):
             ContentDump.text_dump(s)
 
     def search_token(e):
+        global search_number
+        file_manager = FileManager.FileManager()
+
         option = search_options.value
         f_key = file_search_target.current.value
         t_key = target_token.current.value
@@ -116,7 +104,11 @@ def main(page: Page):
             id = db.translate_to_id(f_key, 'original_name')
             s = db.get_content(id)
 
-            ContentDump.search_token(s, t_key)
+            subs = ContentDump.search_token(s, t_key)
+
+        print('hello')
+        file_manager.save_search_results(subs, search_number, t_key)
+        search_number += 1
 
     # hide dialog in a overlay
     page.overlay.append(file_picker)

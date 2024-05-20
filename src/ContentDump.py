@@ -70,3 +70,4 @@ def search_token(text : str, key):
     print(substr)
 
     text_dump_with_keyword(substr, key)
+    return substr

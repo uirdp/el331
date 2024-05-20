@@ -1,5 +1,6 @@
 import DatabaseManager
 import os
+import datetime
 
 class FileManager:
 
@@ -11,5 +12,16 @@ class FileManager:
 
         return n, s
 
+    def save_search_results(self, text, number, term):
+        dt = datetime.datetime.now()
+        ds = dt.strftime('%Y-%m-%d-%H%M%S')
 
+        file_name = str(number) + ds + term
+        path = 'result-' + file_name + '.txt'
+
+        f = open(path, 'w')
+        f.write(text)
+        f.close()
+
+        print(path)
 
