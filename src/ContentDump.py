@@ -24,41 +24,51 @@ def text_dump_with_keyword(text, keyword):
     text_widget.tag_configure("highlight", foreground="red")
     text_widget.tag_configure("normal", foreground="black")
 
-    # Insert text with appropriate tags
+    # Use regex to find whole word matches only
+    pattern = re.compile(r'\b' + re.escape(keyword) + r'\b')
+
     start_idx = 0
     while start_idx < len(text):
-        # Find the next occurrence of the keyword
-        keyword_idx = text.find(keyword, start_idx)
+        match = pattern.search(text, start_idx)
 
-        if keyword_idx == -1:
+        if not match:
             # Insert the rest of the text as normal
             text_widget.insert(tk.END, text[start_idx:], "normal")
             break
 
         # Insert the text before the keyword
-        if start_idx != keyword_idx:
-            text_widget.insert(tk.END, text[start_idx:keyword_idx], "normal")
+        text_widget.insert(tk.END, text[start_idx:match.start()], "normal")
 
         # Insert the keyword with the highlight tag
-        end_idx = keyword_idx + len(keyword)
-        text_widget.insert(tk.END, text[keyword_idx:end_idx], "highlight")
+        text_widget.insert(tk.END, text[match.start():match.end()], "highlight")
 
         # Update the start index
-        start_idx = end_idx
+        start_idx = match.end()
 
     root.mainloop()
 
-def search_token(text : str, key):
+
+def search_token(text: str, key: str):
+    # Split into lists
     words = re.findall(r'\w+|[.,]', text)
+
+    # Find the index of the keyword
+    if key not in words:
+        print(f"Keyword '{key}' not found in text.")
+        return
+
     ind = words.index(key)
 
-    start = max(0, ind - 10)
+    # 20 words before the keyword
+    start = max(0, ind - 20)
 
     # 20 words after the keyword
-    end = min(len(words), ind + 11)
+    end = min(len(words), ind + 21)  # ind + 21 to include the keyword
 
+    # Extract the relevant portion
     substr_words = words[start:end]
 
+    # Reconstruct the string with proper spaces
     substr = ""
     for word in substr_words:
         if word in [",", "."]:
@@ -70,3 +80,4 @@ def search_token(text : str, key):
     print(substr)
 
     text_dump_with_keyword(substr, key)
+    return substr
