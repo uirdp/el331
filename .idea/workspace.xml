@@ -6,19 +6,28 @@
   <component name="ChangeListManager">
     <list default="true" id="9ba127cb-fe19-466f-8d4b-fd7dd4b1472b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/file_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/file_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ContentDump.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/ContentDump.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FileManager.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/FileManager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/MainPanel.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/MainPanel.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2gJoKNSSy3BcHkirNhUHNI79fIQ" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -26,17 +35,29 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Python.ContentDump.executor": "Run",
+    "Python.MainPanel.executor": "Run",
+    "Python.SearchWordPanel.executor": "Run",
+    "Python.gui.executor": "Run",
+    "Python.program.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "salim",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "slm2",
     "last_opened_file_path": "D:/dev/univ/el331-team-topology",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "SQL Dialects",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\dev\univ\el331-team-topology\src\GUI" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -54,10 +75,23 @@
       <option name="presentableId" value="Default" />
       <updated>1715424977431</updated>
       <workItem from="1715424978415" duration="1994000" />
+      <workItem from="1716019234438" duration="9051000" />
+      <workItem from="1716080040843" duration="10095000" />
+      <workItem from="1716111722253" duration="14374000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/el331_team_topology$program.coverage" NAME="program Coverage Results" MODIFIED="1716123318334" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/el331_team_topology$ContentDump.coverage" NAME="ContentDump Coverage Results" MODIFIED="1716125351558" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/el331$MainPanel.coverage" NAME="MainPanel Coverage Results" MODIFIED="1716188944434" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/GUI" />
+    <SUITE FILE_PATH="coverage/el331_team_topology$el331.coverage" NAME="el331 Coverage Results" MODIFIED="1716210760969" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/.." />
+    <SUITE FILE_PATH="coverage/el331$el331.coverage" NAME="el331 Coverage Results" MODIFIED="1716187674841" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/.." />
+    <SUITE FILE_PATH="coverage/el331_team_topology$gui.coverage" NAME="gui Coverage Results" MODIFIED="1716119547348" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/el331_team_topology$SearchWordPanel.coverage" NAME="SearchWordPanel Coverage Results" MODIFIED="1716122079417" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/GUI" />
+    <SUITE FILE_PATH="coverage/el331_team_topology$MainPanel.coverage" NAME="MainPanel Coverage Results" MODIFIED="1716213767044" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/GUI" />
   </component>
 </project>

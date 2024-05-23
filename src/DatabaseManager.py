@@ -6,7 +6,7 @@ class DatabaseManager:
         conn = []
     def open_database(self):
         dbname = '.database'
-        self.conn = sqlite3.connect(dbname)
+        self.conn = sqlite3.connect(dbname, check_same_thread=False)
         self.create_database()
 
     def create_database(self):
@@ -20,7 +20,7 @@ class DatabaseManager:
 
         self.conn.commit()
 
-    #他パラメータを受け取ってidで返す
+    # 他パラメータを受け取ってidで返す
     def translate_to_id(self, user_input, input_type):
         cur = self.conn.cursor()
 
@@ -49,14 +49,16 @@ class DatabaseManager:
         cur.execute('INSERT INTO items(original_name, content) VALUES (?,?);', (filename, content))
         self.conn.commit()
 
-        self.show_data(cur.lastrowid)
+        self.show_all_data()
         print('data inserted ')
 
-    def show_data(self, id):
+    def get_content(self, id):
         cur = self.conn.cursor()
 
-        cur.execute('SELECT * FROM items WHERE id=?', (id,))
-        print(cur.fetchall())
+        cur.execute('SELECT content FROM items WHERE id=?', (id,))
+        s = cur.fetchone()[0]
+
+        return s
 
     def delete_from_database(self, id):
         cur = self.conn.cursor()
