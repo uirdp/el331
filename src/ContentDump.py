@@ -24,14 +24,19 @@ def text_dump_with_keyword(substrings, keyword):
     text_widget.tag_configure("highlight", foreground="red")
     text_widget.tag_configure("normal", foreground="black")
 
+    print(substrings)
     pattern = re.compile(keyword)
     print(pattern)
 
+    index = 0
     for word in substrings:
-        start_idx = 0
+        index += 1
 
+        print(word)
+        if(word == "\n"):
+            text_widget.insert(tk.END, "\n")
         match = pattern.fullmatch(word)
-        start_idx += 1
+
         if match is None:
             text_widget.insert(tk.END, word + ' ', "normal")
 
@@ -39,7 +44,6 @@ def text_dump_with_keyword(substrings, keyword):
             text_widget.insert(tk.END, word + ' ', "highlight")
 
             print("match: " + word[match.start():match.end()])
-            #text_widget.insert(tk.END, word[match.start():match.end()], "highlight")
 
         text_widget.insert(tk.END, "")  # Add a newline between different substrings
 
@@ -57,7 +61,11 @@ def search_token(text: str, key: str):
         print(f"Keyword '{key}' not found in text.")
         return
 
+    print(indices)
+
     substrs = []
+    substr_words = []
+
     for ind in indices:
         # 5 words before the keyword
         start = max(0, ind - 5)
@@ -66,7 +74,8 @@ def search_token(text: str, key: str):
         end = min(len(words), ind + 6)  # ind + 6 to include the keyword
 
         # Extract the relevant portion
-        substr_words = words[start:end]
+        substr_words += words[start:end]
+        substr_words.append("\n")
 
         # Reconstruct the string with proper spaces
         substr = ""
@@ -76,7 +85,9 @@ def search_token(text: str, key: str):
             else:
                 substr += " " + word
 
-        substrs.append(substr.lstrip())  # Remove leading space
+        # Remove leading space
+        substrs.append(substr.lstrip())
 
-        print(substrs)
-        text_dump_with_keyword(substr_words, key)
+
+    print(substrs)
+    text_dump_with_keyword(substr_words, key)
