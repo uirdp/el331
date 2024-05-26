@@ -111,7 +111,6 @@ def main(page: Page):
     def search_token(e):
         global search_number
         file_manager = FileManager.FileManager()
-
         option = search_options.value
         f_key = file_search_target.current.value
         t_key = target_token.current.value
@@ -120,10 +119,6 @@ def main(page: Page):
             s = db.get_content(id)
 
             ContentDump.search_token(s, t_key)
-            subs = ContentDump.search_token(s, t_key)
-
-        file_manager.save_search_results(subs, search_number, t_key)
-        search_number += 1
 
     # hide dialog in a overlay
     page.overlay.append(file_picker)

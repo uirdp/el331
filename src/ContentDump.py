@@ -12,7 +12,7 @@ def text_dump(text):
     root.mainloop()
 
 
-def text_dump_with_keyword(text, keyword):
+def text_dump_with_keyword(substrings, keyword):
     root = tk.Tk()
     root.geometry('500x500')
     root.title("Text Highlight")
@@ -24,26 +24,24 @@ def text_dump_with_keyword(text, keyword):
     text_widget.tag_configure("highlight", foreground="red")
     text_widget.tag_configure("normal", foreground="black")
 
-    # Use regex to find whole word matches only
-    pattern = re.compile(r'\b' + re.escape(keyword) + r'\b')
+    pattern = re.compile(keyword)
+    print(pattern)
 
-    start_idx = 0
-    while start_idx < len(text):
-        match = pattern.search(text, start_idx)
+    for word in substrings:
+        start_idx = 0
 
-        if not match:
-            # Insert the rest of the text as normal
-            text_widget.insert(tk.END, text[start_idx:], "normal")
-            break
+        match = pattern.fullmatch(word)
+        start_idx += 1
+        if match is None:
+            text_widget.insert(tk.END, word + ' ', "normal")
 
-        # Insert the text before the keyword
-        text_widget.insert(tk.END, text[start_idx:match.start()], "normal")
+        if match :
+            text_widget.insert(tk.END, word + ' ', "highlight")
 
-        # Insert the keyword with the highlight tag
-        text_widget.insert(tk.END, text[match.start():match.end()], "highlight")
+            print("match: " + word[match.start():match.end()])
+            #text_widget.insert(tk.END, word[match.start():match.end()], "highlight")
 
-        # Update the start index
-        start_idx = match.end()
+        text_widget.insert(tk.END, "")  # Add a newline between different substrings
 
     root.mainloop()
 
@@ -52,32 +50,33 @@ def search_token(text: str, key: str):
     # Split into lists
     words = re.findall(r'\w+|[.,]', text)
 
-    # Find the index of the keyword
-    if key not in words:
+    # Find all indices of the keyword
+    indices = [i for i, word in enumerate(words) if word == key]
+
+    if not indices:
         print(f"Keyword '{key}' not found in text.")
         return
 
-    ind = words.index(key)
+    substrs = []
+    for ind in indices:
+        # 5 words before the keyword
+        start = max(0, ind - 5)
 
-    # 20 words before the keyword
-    start = max(0, ind - 20)
+        # 5 words after the keyword
+        end = min(len(words), ind + 6)  # ind + 6 to include the keyword
 
-    # 20 words after the keyword
-    end = min(len(words), ind + 21)  # ind + 21 to include the keyword
+        # Extract the relevant portion
+        substr_words = words[start:end]
 
-    # Extract the relevant portion
-    substr_words = words[start:end]
+        # Reconstruct the string with proper spaces
+        substr = ""
+        for word in substr_words:
+            if word in [",", "."]:
+                substr = substr.rstrip() + word
+            else:
+                substr += " " + word
 
-    # Reconstruct the string with proper spaces
-    substr = ""
-    for word in substr_words:
-        if word in [",", "."]:
-            substr = substr.rstrip() + word
-        else:
-            substr += " " + word
+        substrs.append(substr.lstrip())  # Remove leading space
 
-    substr = substr.lstrip()  # Remove leading space
-    print(substr)
-
-    text_dump_with_keyword(substr, key)
-    return substr
+        print(substrs)
+        text_dump_with_keyword(substr_words, key)
