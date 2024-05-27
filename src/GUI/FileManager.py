@@ -1,4 +1,4 @@
-import DatabaseManager
+import DatabaseManager as DatabaseManager
 import datetime
 import os
 

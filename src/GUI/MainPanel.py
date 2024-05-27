@@ -1,6 +1,6 @@
 import FileManager
-import DatabaseManager
-import ContentDump
+import DatabaseManager as DatabaseManager
+import ContentDump as ContentDump
 import SearchWordPanel
 
 from typing import Dict

@@ -1,4 +1,4 @@
-import DatabaseManager
+import DatabaseManager as DatabaseManager
 
 import flet as ft
 from typing import Dict

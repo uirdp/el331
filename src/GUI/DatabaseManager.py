@@ -59,6 +59,13 @@ class DatabaseManager:
         s = cur.fetchone()[0]
 
         return s
+    
+    def update_database(self, id, name):
+        cur = self.conn.cursor()
+
+        cur.execute('UPDATE items SET updated_name = ? WHERE id=?', (name, id))
+
+        self.conn.commit()
 
     def delete_from_database(self, id):
         cur = self.conn.cursor()

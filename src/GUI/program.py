@@ -1,5 +1,5 @@
 import FileManager
-import DatabaseManager
+import DatabaseManager as DatabaseManager
 
 
 def main():
