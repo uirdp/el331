@@ -42,12 +42,17 @@ def main(page: Page):
     search_options = RadioGroup(content=Row([
         Radio(value="original_name", label="Original Name"),
         Radio(value="updated_name", label="Updated Name"),
-        Radio(value="id", label="ID"),]))
+        Radio(value="id", label="ID"),
+        Radio(value="all", label="From All Files")]))
 
     file_search_target = Ref[TextField]()
 
     search_token_button = Ref[ElevatedButton]()
     target_token = Ref[TextField]()
+
+    delete_file_button = Ref[ElevatedButton]()
+    update_file_button = Ref[ElevatedButton]()
+    show_all_button = Ref[ElevatedButton]()
 
     t = Tabs(
         selected_index=0,
@@ -100,6 +105,28 @@ def main(page: Page):
 
         show_file_from_database(key, option)
 
+    def delete_file_from_database(e):
+        option = search_options.value
+        key = file_search_target.current.value
+
+        if option == 'original_name':
+            id = db.translate_to_id(key, 'original_name')
+            print(id)
+            db.delete_from_database(id)
+
+
+    def update_file_name(e):
+        option = search_options.value
+        key = file_search_target.current.value
+        name = target_token.current.value
+        if option == 'original_name':
+            id = db.translate_to_id(key, 'original_name')
+            print(id)
+
+            db.update_database(id, name)
+
+    def show_database(e):
+        db.show_all_data()
     def show_file_from_database(key, option):
         if option == 'original_name':
             id = db.translate_to_id(key, 'original_name')
@@ -120,6 +147,14 @@ def main(page: Page):
 
             ContentDump.search_token(s, t_key)
 
+        if option == 'all':
+            pass
+
+        subs = ContentDump.search_token(s, t_key)
+
+        file_manager.save_search_results(subs, search_number, t_key)
+        search_number += 1
+
     # hide dialog in a overlay
     page.overlay.append(file_picker)
 
@@ -138,26 +173,47 @@ def main(page: Page):
             on_click=upload_files,
         ),
 
-        TextField(ref=file_search_target, label="file name or id"),
+        TextField(ref=file_search_target, label="file name"),
         search_options,
-        TextField(ref=target_token, label='search token'),
+        TextField(ref=target_token, label='New Name or Search Token'),
 
 
         Row(
             controls=[
                 ElevatedButton(
-                    "Show content",
+                    "Show Content",
                     ref=upload_button,
                     icon=icons.DOWNLOAD,
                     on_click=show_file_content,
                 ),
 
                 ElevatedButton(
-                    "Search token",
+                    "Search Token",
                     ref=search_token_button,
                     icon=icons.SEARCH,
                     on_click=search_token,
-                )
+                ),
+
+                ElevatedButton(
+                    "Delete File",
+                    ref=delete_file_button,
+                    icon=icons.SEARCH,
+                    on_click=delete_file_from_database,
+                ),
+
+                ElevatedButton(
+                    "Update File Name",
+                    ref=update_file_button,
+                    icon=icons.SEARCH,
+                    on_click=update_file_name,
+                ),
+
+                ElevatedButton(
+                    "Show All",
+                    ref=show_all_button,
+                    icon=icons.SEARCH,
+                    on_click=show_database,
+                ),
             ]
         )
 

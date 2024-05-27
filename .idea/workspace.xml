@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9ba127cb-fe19-466f-8d4b-fd7dd4b1472b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ContentDump.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/ContentDump.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/ContentDump.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/ContentDump.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +22,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
@@ -53,6 +56,8 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\lcccd\dev\el331\src" />
+      <recent name="C:\Users\lcccd\dev\el331\src\GUI" />
       <recent name="D:\dev\univ\el331-team-topology\src\GUI" />
     </key>
   </component>
@@ -85,13 +90,14 @@
     <option name="version" value="3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/el331_team_topology$program.coverage" NAME="program Coverage Results" MODIFIED="1716123318334" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
-    <SUITE FILE_PATH="coverage/el331$MainPanel.coverage" NAME="MainPanel Coverage Results" MODIFIED="1716188944434" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/GUI" />
-    <SUITE FILE_PATH="coverage/el331_team_topology$el331.coverage" NAME="el331 Coverage Results" MODIFIED="1716210760969" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/.." />
-    <SUITE FILE_PATH="coverage/el331_team_topology$ContentDump.coverage" NAME="ContentDump Coverage Results" MODIFIED="1716705914141" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/el331_team_topology$ContentDump.coverage" NAME="ContentDump Coverage Results" MODIFIED="1716125351558" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/el331$el331.coverage" NAME="el331 Coverage Results" MODIFIED="1716187674841" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/.." />
+    <SUITE FILE_PATH="coverage/el331_team_topology$MainPanel.coverage" NAME="MainPanel Coverage Results" MODIFIED="1716213767044" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/GUI" />
     <SUITE FILE_PATH="coverage/el331_team_topology$gui.coverage" NAME="gui Coverage Results" MODIFIED="1716119547348" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/el331$ContentDump.coverage" NAME="ContentDump Coverage Results" MODIFIED="1716795648045" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/GUI" />
+    <SUITE FILE_PATH="coverage/el331_team_topology$el331.coverage" NAME="el331 Coverage Results" MODIFIED="1716210760969" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/.." />
+    <SUITE FILE_PATH="coverage/el331_team_topology$program.coverage" NAME="program Coverage Results" MODIFIED="1716123318334" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/el331_team_topology$SearchWordPanel.coverage" NAME="SearchWordPanel Coverage Results" MODIFIED="1716122079417" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/GUI" />
-    <SUITE FILE_PATH="coverage/el331_team_topology$MainPanel.coverage" NAME="MainPanel Coverage Results" MODIFIED="1716705921037" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/GUI" />
+    <SUITE FILE_PATH="coverage/el331$MainPanel.coverage" NAME="MainPanel Coverage Results" MODIFIED="1716793817612" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/GUI" />
   </component>
 </project>

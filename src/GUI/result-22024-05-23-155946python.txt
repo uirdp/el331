@@ -1,0 +1,1 @@
+This is a sample document used for testing this python program, which is in the same folder as this file. A typhoon is a tropical cyclone that develops

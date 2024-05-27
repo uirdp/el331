@@ -20,7 +20,7 @@ def main():
     elif command == 'a':
         show_all_files_from_database(db)
     elif command == 'dg':
-        g = '../sample.txt'
+        g = '../sample2.txt'
         db.translate_to_id(g, 'original_name')
     elif command == 'r':
         db.reset_database()
