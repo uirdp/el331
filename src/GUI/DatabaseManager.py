@@ -74,6 +74,16 @@ class DatabaseManager:
 
         self.conn.commit()
 
+    def get_all_ids(self):
+        cur = self.conn.cursor()
+
+        cur.execute('SELECT id FROM items')
+        ids = []
+        for row in cur:
+            ids.append(row[0])
+        return ids
+
+
 
     def show_all_data(self):
         cur = self.conn.cursor()
