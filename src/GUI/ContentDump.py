@@ -87,7 +87,10 @@ def search_token(text: str, key: str):
 
         # Remove leading space
         substrs.append(substr.lstrip())
+        substr += "\n"
 
 
     print(substrs)
     text_dump_with_keyword(substr_words, key)
+
+    return substr

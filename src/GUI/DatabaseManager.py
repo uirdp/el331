@@ -37,7 +37,6 @@ class DatabaseManager:
 
 
 
-
     def reset_database(self):
         cur = self.conn.cursor()
         cur.execute('DROP TABLE IF EXISTS items')
@@ -67,7 +66,18 @@ class DatabaseManager:
 
         self.conn.commit()
 
+    def update_database(self, id, name):
+        cur = self.conn.cursor()
+
+        cur.execute('UPDATE items SET updated_name = ? WHERE id=?', (name, id))
+
+        self.conn.commit()
+
 
     def show_all_data(self):
+        print('all')
         cur = self.conn.cursor()
         cur.execute('SELECT * FROM items')
+
+        for row in cur:
+            print(row)

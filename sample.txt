@@ -1,3 +1,0 @@
-This is a sample document used for testing 
-this python program, which is in the same
-folder as this file.
