@@ -100,7 +100,11 @@ def count_frequency(text : str):
     words = re.split(' |, |\. ',text)
     print(words)
     c = collections.Counter(words)
-    print(c.most_common())
+    print_frequency(c)
+
+def print_frequency(c):
+    for row in c.most_common():
+        print(row[0], row[1])
 
 
 s = 'is is is, there is, none there, wow, shit dam. god of'
