@@ -1,4 +1,5 @@
 # こっちはtkinterでウィンドウを表示させるのがいいかも
+import collections
 import tkinter as tk
 import re
 
@@ -94,3 +95,13 @@ def search_token(text: str, key: str):
     text_dump_with_keyword(substr_words, key)
 
     return substr
+
+def count_frequency(text : str):
+    words = re.split(' |, |\. ',text)
+    print(words)
+    c = collections.Counter(words)
+    print(c.most_common())
+
+
+s = 'is is is, there is, none there, wow, shit dam. god of'
+count_frequency(s)

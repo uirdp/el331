@@ -5,28 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9ba127cb-fe19-466f-8d4b-fd7dd4b1472b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/GUI/konishi.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GUI/result-02024-05-23-155413python.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GUI/result-02024-05-23-155659is.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GUI/result-02024-05-23-155914is.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GUI/result-02024-05-23-160807Konish.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GUI/result-02024-05-23-160854Konishi.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GUI/result-12024-05-23-155514is.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GUI/result-12024-05-23-155821is.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GUI/result-12024-05-23-155932typhoon.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GUI/result-22024-05-23-155946python.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sample2.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/el331.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/el331.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ContentDump.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/ContentDump.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DatabaseManager.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/DatabaseManager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FileManager.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/FileManager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/.database" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/.database" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/MainPanel.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/MainPanel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/file_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/file_manager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/program.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/program.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/ContentDump.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/ContentDump.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,6 +94,7 @@
     <SUITE FILE_PATH="coverage/el331$el331.coverage" NAME="el331 Coverage Results" MODIFIED="1716187674841" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/.." />
     <SUITE FILE_PATH="coverage/el331_team_topology$MainPanel.coverage" NAME="MainPanel Coverage Results" MODIFIED="1716213767044" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/GUI" />
     <SUITE FILE_PATH="coverage/el331_team_topology$gui.coverage" NAME="gui Coverage Results" MODIFIED="1716119547348" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/el331$ContentDump.coverage" NAME="ContentDump Coverage Results" MODIFIED="1716795648045" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/GUI" />
     <SUITE FILE_PATH="coverage/el331_team_topology$el331.coverage" NAME="el331 Coverage Results" MODIFIED="1716210760969" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/.." />
     <SUITE FILE_PATH="coverage/el331_team_topology$program.coverage" NAME="program Coverage Results" MODIFIED="1716123318334" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/el331_team_topology$SearchWordPanel.coverage" NAME="SearchWordPanel Coverage Results" MODIFIED="1716122079417" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/GUI" />
